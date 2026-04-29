@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe Skillz — Production-Ready Claude Code Skills</title>
+<meta name="description" content="Curated Claude Code skills packs for developers and power users. Not another free GitHub dump — tested in production, drop-in install, commercial license included.">
+<meta name="keywords" content="claude code skills, claude skills pack, claude skills marketplace, best claude code skills, production claude skills, claude code extensions, vibe coding tools">
+<meta property="og:title" content="Vibe Skillz — The Claude skills worth paying for">
+<meta property="og:description" content="Curated Claude Code skills packs. Production-tested, instant install, commercial license included.">
+<meta property="og:url" content="https://vibeskillz.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vibe Skillz — The Claude skills worth paying for">
+<meta name="twitter:description" content="Curated Claude Code skills packs. Not a free GitHub dump.">
+<link rel="canonical" href="https://vibeskillz.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #080810;
+    --bg-card: #0f1523;
+    --bg-card-hover: #131c30;
+    --border: #1e293b;
+    --border-hover: rgba(124,58,237,0.4);
+    --purple: #7c3aed;
+    --purple-light: #a78bfa;
+    --purple-dim: rgba(124,58,237,0.15);
+    --amber: #f59e0b;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --text-dimmer: #475569;
+    --text-ghost: #334155;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 58px;
+    background: rgba(8,8,16,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: #fff;
+  }
+  .logo span { color: var(--purple); }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+  .nav-links a {
+    color: var(--text-dim);
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    background: var(--purple);
+    color: #fff !important;
+    padding: 7px 16px;
+    border-radius: 7px;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    transition: opacity 0.15s !important;
+  }
+  .nav-cta:hover { opacity: 0.88; }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 80px 40px 60px;
+    max-width: 760px;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--purple-dim);
+    border: 1px solid rgba(124,58,237,0.3);
+    color: var(--purple-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 22px;
+  }
+
+  h1 {
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    color: var(--text);
+    margin-bottom: 18px;
+  }
+  h1 em {
+    color: var(--purple);
+    font-style: normal;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    max-width: 560px;
+    margin-bottom: 28px;
+  }
+
+  .badges {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-dimmer);
+    font-weight: 500;
+  }
+  .badge::before {
+    content: '✓';
+    color: var(--purple);
+    font-weight: 800;
+  }
+
+  /* ── CATALOG ── */
+  .catalog {
+    padding: 0 40px 72px;
+  }
+
+  .category-section { margin-bottom: 48px; }
+
+  .category-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-dimmer);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .category-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .packs-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .pack-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    width: 268px;
+    display: block;
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    cursor: pointer;
+    position: relative;
+  }
+  .pack-card:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-card-hover);
+    transform: translateY(-2px);
+  }
+  .pack-card.coming {
+    opacity: 0.38;
+    pointer-events: none;
+  }
+
+  .pack-icon { font-size: 30px; margin-bottom: 12px; display: block; }
+
+  .pack-name {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 5px;
+    letter-spacing: -0.2px;
+  }
+
+  .pack-tagline {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .pack-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pack-count {
+    font-size: 11px;
+    color: var(--text-dimmer);
+    font-weight: 500;
+  }
+
+  .pack-price {
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--purple);
+    letter-spacing: -0.3px;
+  }
+  .pack-price.amber { color: var(--amber); }
+
+  .pack-buy {
+    display: inline-block;
+    margin-top: 14px;
+    width: 100%;
+    text-align: center;
+    background: var(--purple);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 9px;
+    border-radius: 8px;
+    transition: opacity 0.15s;
+  }
+  .pack-buy:hover { opacity: 0.88; }
+  .pack-buy.amber { background: var(--amber); color: #000; }
+
+  .coming-tag {
+    font-size: 10px;
+    color: var(--text-ghost);
+    font-style: italic;
+  }
+
+  /* ── BUNDLE ── */
+  .bundle {
+    margin: 0 40px 72px;
+    background: linear-gradient(135deg, #130826 0%, #0c1220 60%, #080d1a 100%);
+    border: 1px solid rgba(124,58,237,0.3);
+    border-radius: 16px;
+    padding: 32px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .bundle-text h2 {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin-bottom: 5px;
+  }
+  .bundle-text p {
+    font-size: 13px;
+    color: var(--purple-light);
+  }
+
+  .bundle-right { text-align: right; flex-shrink: 0; }
+
+  .bundle-price {
+    font-size: 36px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+  .bundle-price s {
+    font-size: 16px;
+    color: var(--text-dimmer);
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-right: 4px;
+  }
+
+  .bundle-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background: var(--purple);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 22px;
+    border-radius: 9px;
+    transition: opacity 0.15s;
+  }
+  .bundle-btn:hover { opacity: 0.88; }
+
+  /* ── WHY ── */
+  .why {
+    padding: 0 40px 80px;
+  }
+  .why-header {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-dimmer);
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .why-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .why-item h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .why-item p {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .why-item code {
+    color: var(--purple-light);
+    font-size: 11px;
+    background: var(--purple-dim);
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  footer p {
+    font-size: 11px;
+    color: var(--text-ghost);
+  }
+  .footer-links {
+    display: flex;
+    gap: 18px;
+  }
+  .footer-links a {
+    font-size: 11px;
+    color: var(--text-dimmer);
+    transition: color 0.15s;
+  }
+  .footer-links a:hover { color: var(--text-muted); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    .hero { padding: 52px 20px 44px; }
+    .catalog { padding: 0 20px 52px; }
+    .bundle { margin: 0 20px 52px; flex-direction: column; text-align: center; }
+    .bundle-right { text-align: center; }
+    .why { padding: 0 20px 60px; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    footer { padding: 20px; }
+    .pack-card { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">vibe<span>skillz</span></a>
+  <div class="nav-links">
+    <a href="#skills">Skills</a>
+    <a href="#bundle">Bundle</a>
+    <a href="https://vibeskillz.gumroad.com" target="_blank" rel="noopener" class="nav-cta">Browse all →</a>
+  </div>
+</nav>
+
+<main>
+
+  <section class="hero" aria-label="Hero">
+    <div class="eyebrow">✦ Claude Code Skills</div>
+    <h1>The Claude skills<br><em>worth paying for.</em></h1>
+    <p class="hero-sub">Not another free GitHub dump. Every pack is curated, tested in production, and built to make Claude Code actually do what you need it to do.</p>
+    <div class="badges">
+      <span class="badge">Drop-in install — no scripts</span>
+      <span class="badge">Production-tested, not AI-slop</span>
+      <span class="badge">Commercial license included</span>
+    </div>
+  </section>
+
+  <section class="catalog" id="skills" aria-label="Skill packs">
+
+    <div class="category-section">
+      <div class="category-label">Dev Tools</div>
+      <div class="packs-row">
+
+        <a href="https://vibeskillz.gumroad.com/l/vibe-coder-toolkit" target="_blank" rel="noopener" class="pack-card" aria-label="Vibe Coder Toolkit — $39">
+          <span class="pack-icon">⚡</span>
+          <div class="pack-name">Vibe Coder Toolkit</div>
+          <div class="pack-tagline">10 skills that catch what vibe coding misses — QA, security, PR review, refactoring, and more. Before your users find the bugs.</div>
+          <div class="pack-footer">
+            <span class="pack-count">10 skills</span>
+            <span class="pack-price">$39</span>
+          </div>
+          <span class="pack-buy">Get this pack →</span>
+        </a>
+
+        <div class="pack-card coming" aria-hidden="true">
+          <span class="pack-icon">🔧</span>
+          <div class="pack-name">API Builder Pack</div>
+          <div class="pack-tagline">Production-ready API clients with auth, retry, and rate-limit handling.</div>
+          <div class="pack-footer">
+            <span class="coming-tag">coming soon</span>
+            <span class="pack-price" style="color:var(--text-ghost)">—</span>
+          </div>
+        </div>
+
+        <div class="pack-card coming" aria-hidden="true">
+          <span class="pack-icon">🚢</span>
+          <div class="pack-name">DevOps Pack</div>
+          <div class="pack-tagline">Deploy confidently. CI/CD, infra-as-code, incident runbooks.</div>
+          <div class="pack-footer">
+            <span class="coming-tag">coming soon</span>
+            <span class="pack-price" style="color:var(--text-ghost)">—</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="category-section">
+      <div class="category-label">Fitness &amp; Health</div>
+      <div class="packs-row">
+
+        <a href="https://vibeskillz.gumroad.com/l/workout-tracker-pack" target="_blank" rel="noopener" class="pack-card" aria-label="Workout Skill Pack — $29">
+          <span class="pack-icon">💪</span>
+          <div class="pack-name">Workout Skill Pack</div>
+          <div class="pack-tagline">Log sessions, plan training blocks, track PRs, analyze progress. Claude as your obsessive training partner.</div>
+          <div class="pack-footer">
+            <span class="pack-count">6 skills + scripts</span>
+            <span class="pack-price amber">$29</span>
+          </div>
+          <span class="pack-buy amber">Get this pack →</span>
+        </a>
+
+        <div class="pack-card coming" aria-hidden="true">
+          <span class="pack-icon">🥗</span>
+          <div class="pack-name">Nutrition Pack</div>
+          <div class="pack-tagline">Macros, meal planning, and nutrition tracking for serious athletes.</div>
+          <div class="pack-footer">
+            <span class="coming-tag">coming soon</span>
+            <span class="pack-price" style="color:var(--text-ghost)">—</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <div class="bundle" id="bundle">
+    <div class="bundle-text">
+      <h2>Get every pack, forever.</h2>
+      <p>All current packs + every future pack included. One payment, no subscription.</p>
+    </div>
+    <div class="bundle-right">
+      <div class="bundle-price"><s>$68</s> $59</div>
+      <a href="https://vibeskillz.gumroad.com/l/bundle" target="_blank" rel="noopener" class="bundle-btn">Get the bundle →</a>
+    </div>
+  </div>
+
+  <section class="why" aria-label="Why Vibe Skillz">
+    <div class="why-header">Why vibeskillz</div>
+    <div class="why-grid">
+      <div class="why-item">
+        <h3>Not a free dump</h3>
+        <p>Every skill is hand-tested in real projects. If it doesn't change how you work, it's not in the pack.</p>
+      </div>
+      <div class="why-item">
+        <h3>Instant install</h3>
+        <p>Drop the SKILL.md files into <code>~/.claude/skills/</code>. No npm, no config, no setup scripts.</p>
+      </div>
+      <div class="why-item">
+        <h3>Grows with Claude</h3>
+        <p>Built for Claude Code's native skills system. Stays compatible as the platform evolves.</p>
+      </div>
+      <div class="why-item">
+        <h3>Commercial license</h3>
+        <p>Single-seat commercial use included. Use them in client work, at your job, in your products.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 vibeskillz.com &mdash; Production-ready Claude Code skills</p>
+  <div class="footer-links">
+    <a href="https://vibeskillz.gumroad.com" target="_blank" rel="noopener">Gumroad store</a>
+    <a href="mailto:support@vibeskillz.com">support@vibeskillz.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
